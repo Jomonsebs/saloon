@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "485496820758",
+    "project_id": "saloon-b8b5c",
+    "storage_bucket": "saloon-b8b5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485496820758:android:39c9363ad50e3b4d045137",
+        "android_client_info": {
+          "package_name": "com.example.estilo_salon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkLNFL54lGHben7UR26GG-754IQ9N5eLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
