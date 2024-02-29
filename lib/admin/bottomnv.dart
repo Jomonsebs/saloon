@@ -1,4 +1,6 @@
+import 'package:estilo_salon/admin/adminaction.dart';
 import 'package:estilo_salon/admin/adminhome.dart';
+import 'package:estilo_salon/admin/updatesaloon.dart';
 import 'package:flutter/material.dart';
 
 class AdminHomePage extends StatelessWidget {
@@ -14,10 +16,10 @@ class AdminHomePage extends StatelessWidget {
         crossAxisSpacing: 16.0,
         mainAxisSpacing: 16.0,
         children: [
-          _buildMenuItem(context, 'Manage Saloons', Icons.people, AdminPage()), // Pass the page object to navigate to
-          _buildMenuItem(context, 'Manage Orders', Icons.shopping_cart,AdminPage()),
-          _buildMenuItem(context, 'Manage Products', Icons.shopping_basket,AdminPage()),
-          _buildMenuItem(context, 'Analytics', Icons.analytics,AdminPage()),
+          _buildMenuItem(context, 'Add Saloons', Icons.people, AdminPagse()), // Pass the page object to navigate to
+          _buildMenuItem(context, 'Manage Booking', Icons.shopping_cart,AppointmentScreen()),
+          _buildMenuItem(context, 'Manage Saloons', Icons.shopping_basket, updates()),
+        //  _buildMenuItem(context, 'Analytics', Icons.analytics,AdminPagse()),
         ],
       ),
     );

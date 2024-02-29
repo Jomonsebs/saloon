@@ -52,7 +52,7 @@ class _BottomNaviState extends State<BottomNavi> {
             HomePageScreen(),
             AppointmentScreen(),
             CategoriScreen(),
-            SaloonScreen(),
+            SaloonDemoVideoPlayer(),
             SettingsScreen(),
           ],
         ),

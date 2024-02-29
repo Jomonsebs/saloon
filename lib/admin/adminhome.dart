@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class AdminPage extends StatefulWidget {
-  const AdminPage({Key? key}) : super(key: key);
+class AdminPagse extends StatefulWidget {
+  const AdminPagse({Key? key}) : super(key: key);
 
   @override
   _AdminPageState createState() => _AdminPageState();
 }
 
-class _AdminPageState extends State<AdminPage> {
+class _AdminPageState extends State<AdminPagse> {
   TextEditingController salonNameController = TextEditingController();
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController aboutController = TextEditingController();

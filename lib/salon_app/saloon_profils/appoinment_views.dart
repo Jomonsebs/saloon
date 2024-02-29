@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AppointmentViews extends StatelessWidget {
-  final String salonId;
+    final String salonId;
 
   const AppointmentViews({Key? key, required this.salonId}) : super(key: key);
 

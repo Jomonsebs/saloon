@@ -1,5 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:estilo_salon/utils/fonts.dart';
 import 'package:estilo_salon/utils/image_strings.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -26,7 +26,11 @@ class SaloonViews extends StatelessWidget {
           if (!snapshot.hasData) {
             return Center(child: CircularProgressIndicator());
           }
-          final salonData = snapshot.data!.data() as Map<String, dynamic>;
+          final salonData = snapshot.data!.data() as Map<String, dynamic>?;
+
+          if (salonData == null) {
+            return Center(child: Text("Salon not found."));
+          }
 
           return SingleChildScrollView(
             child: Column(

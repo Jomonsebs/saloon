@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:estilo_salon/admin/adminaction.dart';
-import '../saloon_profils/appointment_details_views.dart';
 
 class AppointmentScreen extends StatelessWidget {
   const AppointmentScreen({Key? key}) : super(key: key);
@@ -53,7 +52,41 @@ class AppointmentScreen extends StatelessWidget {
                         SizedBox(height: 8),
                         Text("Admin Approved: ${adminApproved ? 'Yes' : 'No'}"),
                         SizedBox(height: 8),
-                     
+                        Row(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                // Approve the appointment
+                                FirebaseFirestore.instance.collection('appointments').doc(appointment.id).update({
+                                  'adminApproved': true,
+                                }).then((value) {
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                    content: Text("Appointment Approved"),
+                                  ));
+                                }).catchError((error) {
+                                  print("Failed to approve appointment: $error");
+                                });
+                              },
+                              child: Text("Approve"),
+                            ),
+                            SizedBox(width: 8),
+                            ElevatedButton(
+                              onPressed: () {
+                                // Reject the appointment
+                                FirebaseFirestore.instance.collection('appointments').doc(appointment.id).update({
+                                  'adminApproved': false,
+                                }).then((value) {
+                                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                    content: Text("Appointment Rejected"),
+                                  ));
+                                }).catchError((error) {
+                                  print("Failed to reject appointment: $error");
+                                });
+                              },
+                              child: Text("Reject"),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
